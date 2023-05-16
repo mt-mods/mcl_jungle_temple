@@ -45,7 +45,7 @@ mcl_structures.register_structure("jungle_temple",{
 		modpath.."/schematics/mcl_jungle_temple_main_temple.mts",
 	},
 	after_place = function(pos,def,pr)
-		local hl = def.sidelen / 2
+		local hl = def.sidelen
 		local p1 = vector.offset(pos,-hl,-hl,-hl)
 		local p2 = vector.offset(pos,hl,hl,hl)
 
@@ -58,6 +58,7 @@ mcl_structures.register_structure("jungle_temple",{
 		local stonebrickwall = minetest.find_nodes_in_area(p1,p2,{"mcl_walls:stonebrick_0"})
 		local cobble = minetest.find_nodes_in_area(p1,p2,{"mcl_core:cobble"})
 		local torches = minetest.find_nodes_in_area(p1,p2,{"mcl_torches:torch_wall"})
+		local tnt = minetest.find_nodes_in_area(p1,p2,{"mcl_tnt:tnt"})
 
 		-- Grab the positions for the stairs to be replaced.
 		local sbs = get_replacements(stonebrickstair,70,pr)
@@ -70,7 +71,8 @@ mcl_structures.register_structure("jungle_temple",{
 		minetest.bulk_set_node(get_replacements(stonebricktopslab,70,pr),{name="mcl_stairs:slab_stonebrickmossy_top"})
 		minetest.bulk_set_node(get_replacements(stonebrickwall,70,pr),{name="mcl_walls:stonebrickmossy_0"})
 		minetest.bulk_set_node(get_replacements(cobble,70,pr),{name="mcl_core:mossycobble"})
-		minetest.bulk_set_node(get_replacements(torches,30,pr),{name="air"})
+		minetest.bulk_set_node(get_replacements(torches,50,pr),{name="air"})
+		minetest.bulk_set_node(get_replacements(tnt,50,pr),{name="mcl_core:cobble"})
 
 		for _, stairs in pairs(sbs) do
 			local stair = minetest.get_node(stairs)
@@ -84,6 +86,10 @@ mcl_structures.register_structure("jungle_temple",{
 	daughters = {{
 		files = {modpath.."/schematics/mcl_jungle_temple_middle_floor.mts"},
 			pos = vector.new(0, -7, 0),
+	},
+	{
+		files = {modpath.."/schematics/mcl_jungle_temple_bottom_four_way.mts"},
+			pos = vector.new(0, -16, 0),
 	}},
 	loot = {
 		["mcl_barrels:barrel_closed" ] ={{

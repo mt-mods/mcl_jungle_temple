@@ -4,7 +4,7 @@
 
 This mod adds improved jungle temples to MineClone 2. It adds new structure designs, more hidden dangers, and better loot. In short, freshening up the boring old Jungle Temple Designs.
 
-If you are ready to explore the jungle and face its many dangers, there is loot of excellent value hidden in the depths of these temples. However, the ancient builders of times before have laid many traps in an attempt to keep their treasure safe. Are you ready?
+If you are ready to explore the jungle and face its many dangers, there is loot of exquisite value hidden in the depths of these temples. However, the ancient builders of times before have laid many traps in an attempt to keep their treasure safe. Are you ready?
 
 ## Credits
 * PrairieWind - For starting this project and doing the initial coding work and structure schematic creation.
